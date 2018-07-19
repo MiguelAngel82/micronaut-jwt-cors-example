@@ -13,9 +13,9 @@ $ curl -X POST \
 	"password": "123"
 }'
 ```
-And if this endpoint is executed from a front app, it works too.
+And if this endpoint is executed from a browser executing some Angular, React, etc. app, it works too.
 
-But when the endpoint /user is executed from a front application, this error is shown:
+But when the endpoint /user is executed from a browser (preflight request), this error is shown:
 ```
 Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:4200' is therefore not allowed access. The response had HTTP status code 401.
 ```
