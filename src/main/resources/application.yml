@@ -1,0 +1,29 @@
+micronaut:
+    application:
+        name: micronaut-jwt-cors-example
+    security:
+        enabled: true
+        interceptUrlMap:
+            -
+              pattern: /user
+              httpMethod: POST
+              access:
+                - isAnonymous()
+        endpoints:
+            login:
+                enabled: true
+            oauth:
+                enabled: true
+        token:
+            jwt:
+                enabled: true
+                signatures:
+                    secret:
+                        generator:
+                            secret: pleaseChangeThisSecretForANewOne
+---
+micronaut:
+    server:
+        cors:
+            enabled: true
+        port: 8080
